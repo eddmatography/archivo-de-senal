@@ -65,6 +65,7 @@ function renderEntrada(entrada) {
 }
 
 function procesarWikilinks(texto) {
+    // Convierte [[texto|url]] en un enlace HTML
     return texto.replace(/\[\[([^|]+)\|([^\]]+)\]\]/g, (match, label, url) => {
         const safeLabel = escapeHtml(label);
         const safeUrl = escapeHtml(url);
