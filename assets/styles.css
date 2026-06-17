@@ -52,7 +52,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* ---------- Ambient backdrop (signature element) ---------- */
+/* ---------- Ambient backdrop ---------- */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -78,7 +78,6 @@ button:focus-visible {
   background: radial-gradient(circle, rgba(242,84,91,0.10), transparent 70%);
 }
 
-/* waveform signature, drawn once, faint, behind content */
 .waveform {
   position: fixed;
   left: 0; right: 0; bottom: 0;
@@ -267,70 +266,45 @@ button:focus-visible {
 }
 
 /* ---------- Reading page ---------- */
-.reader-header {
+/* El contenido se inyecta dentro de #contenido (main) */
+#contenido {
   max-width: var(--col-read);
   margin: 0 auto;
-  padding: 3rem 1.5rem 0;
+  padding: 2rem 4rem 6rem;   /* ← PADDING LATERAL DE 4rem para que respire */
+  font-size: 1.08rem;
+  line-height: 1.75;
 }
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--text-faint);
-  margin-bottom: 2.5rem;
-}
-.back-link:hover { color: var(--teal); text-decoration: none; }
 
-.reader-meta {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--text-faint);
-  letter-spacing: 0.05em;
-  display: flex;
-  gap: 0.9rem;
-  align-items: center;
-  margin-bottom: 1.1rem;
+#contenido p {
+  margin: 0 0 1.5rem;
+  color: var(--text);
 }
-.reader-meta .piece { color: var(--teal); }
-.reader-meta .cat { color: var(--coral); }
-.reader-meta .dot { color: var(--line); }
 
-.reader-title {
+#contenido h1 {
   font-family: var(--serif);
   font-size: clamp(1.9rem, 4vw, 2.6rem);
   line-height: 1.18;
   font-weight: 700;
   margin: 0 0 0.6rem;
 }
-.reader-subtitle {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--text-dim);
-  margin: 0 0 2.5rem;
-}
 
-.reader-body {
-  max-width: var(--col-read);
-  margin: 0 auto;
-  padding: 0 4rem 6rem;   /* ← AUMENTADO a 4rem para más espacio lateral */
-  font-size: 1.08rem;
-  line-height: 1.75;
-}
-.reader-body p {
-  margin: 0 0 1.5rem;
-  color: var(--text);
-}
-.reader-body h2 {
+#contenido h2 {
   font-family: var(--serif);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 2.6rem 0 1.2rem;
   color: var(--text);
 }
-.reader-body blockquote {
+
+#contenido h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 2.6rem 0 1.2rem;
+  color: var(--text);
+}
+
+#contenido blockquote {
   margin: 2rem 0;
   padding: 0.3rem 0 0.3rem 1.3rem;
   border-left: 2px solid var(--teal);
@@ -340,11 +314,18 @@ button:focus-visible {
   color: var(--text-dim);
 }
 
-.reader-tags {
+#contenido .meta-fecha {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  margin-bottom: 1.5rem;
+}
+
+#contenido .tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   padding-top: 1.8rem;
   border-top: 1px solid var(--line);
 }
@@ -377,6 +358,9 @@ button:focus-visible {
   .entry-piece { order: -1; }
   .entry-meta { text-align: left; }
   .site-header { padding-top: 2rem; }
+  #contenido {
+    padding: 1.5rem 1.5rem 6rem;   /* ← en móvil se reduce el padding */
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
