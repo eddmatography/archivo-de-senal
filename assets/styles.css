@@ -396,9 +396,20 @@ button:focus-visible {
   text-decoration: none; /* asegura que no aparezca subrayado doble */
 }
 
-/* ============================================================
-   bloque destacado (para frases clave)
-   ============================================================ */
+/* Enlaces tipo Wikipedia */
+.wikilink {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.wikilink:hover {
+  border-bottom-color: var(--teal);
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* Bloque destacado */
 .destacado {
   font-family: var(--serif);
   font-size: 1.2rem;
@@ -413,7 +424,7 @@ button:focus-visible {
   font-style: italic;
 }
 
-/* (Opcional) refinar la cita para que use tus tokens */
+/* Mejora de citas (opcional) */
 .reader-body blockquote {
   border-left-color: var(--teal);
   color: var(--text-dim);
