@@ -381,22 +381,9 @@ button:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
-   /* ============================================================
-   NUEVO: enlaces tipo Wikipedia (sin subrayado, solo hover)
-   ============================================================ */
-.wikilink {
-  color: var(--teal);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-.wikilink:hover {
-  border-bottom-color: var(--teal);
-  color: var(--teal);
-  text-decoration: none; /* asegura que no aparezca subrayado doble */
-}
+  
 
-/* Enlaces tipo Wikipedia */
+   /* Enlaces tipo Wikipedia */
 .wikilink {
   color: var(--teal);
   text-decoration: none;
@@ -422,12 +409,4 @@ button:focus-visible {
   border-radius: 0 4px 4px 0;
   line-height: 1.6;
   font-style: italic;
-}
-
-/* Mejora de citas (opcional) */
-.reader-body blockquote {
-  border-left-color: var(--teal);
-  color: var(--text-dim);
-  font-family: var(--serif);
-}
 }
