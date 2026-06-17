@@ -1,85 +1,85 @@
-// ============================================================
-// ARCHIVO DE SEÑAL — render de lectura individual
-// Lee entradas.json, busca la entrada por ?id=, la pinta.
-// ============================================================
-
-function escapeHtml(str) {
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-function formatearFecha(iso) {
-  const meses = [
-    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
-  ];
-  const [y, m, d] = iso.split("-").map(Number);
-  return `${d} de ${meses[m - 1]} de ${y}`;
-}
-
-function renderBloque(bloque) {
-  switch (bloque.tipo) {
-    case "parrafo":
-      return `<p>${escapeHtml(bloque.texto)}</p>`;
-    case "subtitulo":
-      return `<h2>${escapeHtml(bloque.texto)}</h2>`;
-    case "cita":
-      return `<blockquote>${escapeHtml(bloque.texto)}</blockquote>`;
-    default:
-      return "";
-  }
-}
-
-async function init() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  const main = document.getElementById("reader-root");
-
-  try {
-    const res = await fetch("entradas.json");
-    if (!res.ok) throw new Error("No se pudo cargar entradas.json");
-    const data = await res.json();
-    const entrada = data.entradas.find(e => e.id === id);
-
-    if (!entrada) {
-      main.innerHTML = `
-        <div class="reader-header">
-          <a class="back-link" href="index.html">&larr; volver al archivo</a>
-          <p>No se encontró esa pieza. Puede que el enlace esté incompleto o la entrada aún no exista.</p>
-        </div>`;
-      document.title = "No encontrado — " + data.sitio.titulo;
-      return;
+// lectura.js
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) {
+        document.getElementById('contenido').innerHTML = '<p>No se especificó ID.</p>';
+        return;
     }
 
-    document.title = `${entrada.titulo} — ${data.sitio.titulo}`;
+    fetch('entradas.json')
+        .then(res => res.json())
+        .then(data => {
+            const entrada = data.entradas.find(e => e.id === id);
+            if (!entrada) {
+                document.getElementById('contenido').innerHTML = '<p>Entrada no encontrada.</p>';
+                return;
+            }
+            renderEntrada(entrada);
+        })
+        .catch(err => {
+            document.getElementById('contenido').innerHTML = '<p>Error cargando el archivo.</p>';
+            console.error(err);
+        });
+});
 
-    const tagsHtml = (entrada.tags || [])
-      .map(t => `<span class="tag">${escapeHtml(t)}</span>`)
-      .join("");
+function renderEntrada(entrada) {
+    const contenedor = document.getElementById('contenido');
+    let html = '';
 
-    main.innerHTML = `
-      <div class="reader-header">
-        <a class="back-link" href="index.html">&larr; volver al archivo</a>
-        <div class="reader-meta">
-          <span class="piece">#${escapeHtml(entrada.pieza)}</span>
-          <span class="dot">·</span>
-          <span class="cat">${escapeHtml(entrada.categoria)}</span>
-          <span class="dot">·</span>
-          <span>${formatearFecha(entrada.fecha)}</span>
-        </div>
-        <h1 class="reader-title">${escapeHtml(entrada.titulo)}</h1>
-        ${entrada.subtitulo ? `<p class="reader-subtitle">${escapeHtml(entrada.subtitulo)}</p>` : ""}
-      </div>
-      <article class="reader-body">
-        ${entrada.cuerpo.map(renderBloque).join("\n")}
-        <div class="reader-tags">${tagsHtml}</div>
-      </article>
-    `;
-  } catch (err) {
-    main.innerHTML = `<div class="reader-header"><p>No se pudo cargar el contenido. Si estás abriendo este archivo directamente (file://), sírvelo con un servidor local — revisa el README.</p></div>`;
-    console.error(err);
-  }
+    html += `<h1>${escapeHtml(entrada.titulo)}</h1>`;
+    html += `<h2>${escapeHtml(entrada.subtitulo)}</h2>`;
+    
+    let fecha = entrada.fecha || '';
+    if (fecha.length === 7) {
+        const [year, month] = fecha.split('-');
+        const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        fecha = `${meses[parseInt(month)-1]} de ${year}`;
+    } else if (fecha.length === 10) {
+        const parts = fecha.split('-');
+        const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        fecha = `${parseInt(parts[2])} de ${meses[parseInt(parts[1])-1]} de ${parts[0]}`;
+    }
+    html += `<p class="meta-fecha">${fecha} · ${escapeHtml(entrada.categoria)}</p>`;
+
+    if (entrada.tags && entrada.tags.length > 0) {
+        html += `<div class="tags">${entrada.tags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join(' ')}</div>`;
+    }
+
+    entrada.cuerpo.forEach(bloque => {
+        let texto = bloque.texto || '';
+        let contenidoProcesado = procesarWikilinks(texto);
+
+        if (bloque.tipo === 'parrafo') {
+            html += `<p>${contenidoProcesado}</p>`;
+        } else if (bloque.tipo === 'subtitulo') {
+            html += `<h3>${contenidoProcesado}</h3>`;
+        } else if (bloque.tipo === 'cita') {
+            html += `<blockquote>${contenidoProcesado}</blockquote>`;
+        } else if (bloque.tipo === 'destacado') {
+            html += `<div class="destacado">${contenidoProcesado}</div>`;
+        }
+    });
+
+    contenedor.innerHTML = html;
 }
 
-init();
+function procesarWikilinks(texto) {
+    return texto.replace(/\[\[([^|]+)\|([^\]]+)\]\]/g, (match, label, url) => {
+        const safeLabel = escapeHtml(label);
+        const safeUrl = escapeHtml(url);
+        return `<a class="wikilink" href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeLabel}</a>`;
+    });
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return String(text).replace(/[&<>"']/g, function(m) { return map[m]; });
+}
