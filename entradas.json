@@ -1,0 +1,35 @@
+{
+  "sitio": {
+    "titulo": "Archivo de Señal",
+    "subtitulo": "Cultura, arte digital y electrónico — crítica y difusión",
+    "autor": "Eduardo Manuel Gutiérrez Orduña"
+  },
+  "entradas": [
+    {
+      "id": "arquitectura-sonora-entornos-virtuales",
+      "pieza": "01",
+      "titulo": "Arquitectura sonora en entornos virtuales",
+      "subtitulo": "La transformación del espacio a través de la tecnología",
+      "fecha": "2026-06-10",
+      "categoria": "Ensayo",
+      "extracto": "El espacio virtual no debe evaluarse por su capacidad de imitar al espacio físico, sino por las experiencias que solo él puede generar. Una lectura crítica de cómo el sonido se volvió material arquitectónico en lo digital.",
+      "tags": ["arte sonoro", "espacio virtual", "Krauss", "Zumthor", "Steyerl"],
+      "cuerpo": [
+        { "tipo": "parrafo", "texto": "Los espacios virtuales han transformado la creación contemporánea al ofrecer nuevas formas de explorar la relación entre el sonido, el entorno y la experiencia estética. Estas plataformas permiten diseñar entornos inmersivos que expanden los límites sensoriales mediante tecnologías como el audio tridimensional y la espacialización sonora, reconfigurando profundamente la percepción del espacio arquitectónico virtual." },
+        { "tipo": "parrafo", "texto": "Sin embargo, esta transformación no es neutral: plantea tensiones técnicas, conceptuales y culturales sobre la autenticidad de la experiencia, la distribución desigual de los recursos tecnológicos y la posible reducción del sonido a mero decorado auditivo." },
+        { "tipo": "subtitulo", "texto": "Sonido expandido: la otra materialidad sonora" },
+        { "tipo": "parrafo", "texto": "El arte sonoro ha experimentado una transformación sostenida desde las primeras experimentaciones analógicas hasta la integración de herramientas computacionales avanzadas. Luigi Russolo, con su manifiesto El arte de los ruidos (1913), abrió la posibilidad de considerar el ruido cotidiano como material legítimo de creación." },
+        { "tipo": "parrafo", "texto": "Con la llegada de internet y los dispositivos conectados, esta genealogía encontró un nuevo soporte: la digitalidad permeó la creación de espacios virtuales y llevó el arte sonoro a una dimensión inédita." },
+        { "tipo": "subtitulo", "texto": "El espacio virtual en la arquitectura sonora" },
+        { "tipo": "parrafo", "texto": "Rosalind Krauss argumenta que las categorías tradicionales de lo escultórico se disuelven cuando el arte empieza a abarcar relaciones espaciales y conceptuales que desbordan cualquier definición previa. Ese marco resulta productivo para pensar el espacio virtual: no puede reducirse a ninguna categoría heredada." },
+        { "tipo": "cita", "texto": "El espacio sonoro virtual no debería aspirar a replicar lo físico, sino a explorar lo que solo él puede hacer." },
+        { "tipo": "parrafo", "texto": "Desde la arquitectura física, Peter Zumthor ofrece un polo conceptual opuesto y complementario: los espacios adquieren significado a través de la materialidad, la luz y la interacción sensorial directa con el cuerpo." },
+        { "tipo": "subtitulo", "texto": "Percepción sonora en la virtualidad" },
+        { "tipo": "parrafo", "texto": "El concepto más útil para pensar la percepción sonora en lo virtual es la escucha reducida de Pierre Schaeffer. En los entornos virtuales, esta forma de escucha se intensifica de manera natural: el sonido ya no tiene un origen tangible visible." },
+        { "tipo": "parrafo", "texto": "Hito Steyerl ofrece un marco para reencuadrar las limitaciones técnicas: las imágenes de baja resolución no son simplemente versiones inferiores, son objetos culturales específicos marcados por las condiciones de su distribución. La misma lógica aplica al sonido digital." },
+        { "tipo": "subtitulo", "texto": "Conclusión" },
+        { "tipo": "parrafo", "texto": "El espacio sonoro virtual no es una versión degradada del espacio físico, sino un territorio con su propia ontología. La pregunta pertinente no es cuánto se parece el entorno virtual al físico, sino qué puede hacer que el físico no puede." }
+      ]
+    }
+  ]
+}
