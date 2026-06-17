@@ -1,49 +1,91 @@
-/* Estilo para enlaces tipo Wikipedia (azul, sin subrayado salvo hover) */
-.wikilink {
-    color: #0055a4;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-}
-.wikilink:hover {
-    border-bottom-color: #0055a4;
+// lectura.js
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) {
+        document.getElementById('contenido').innerHTML = '<p>No se especificó ID.</p>';
+        return;
+    }
+
+    fetch('entradas.json')
+        .then(res => res.json())
+        .then(data => {
+            const entrada = data.entradas.find(e => e.id === id);
+            if (!entrada) {
+                document.getElementById('contenido').innerHTML = '<p>Entrada no encontrada.</p>';
+                return;
+            }
+            renderEntrada(entrada);
+        })
+        .catch(err => {
+            document.getElementById('contenido').innerHTML = '<p>Error cargando el archivo.</p>';
+            console.error(err);
+        });
+});
+
+function renderEntrada(entrada) {
+    const contenedor = document.getElementById('contenido');
+    let html = '';
+
+    // Título y metadatos
+    html += `<h1>${escapeHtml(entrada.titulo)}</h1>`;
+    html += `<h2>${escapeHtml(entrada.subtitulo)}</h2>`;
+    
+    // Fecha formateada (tolera "YYYY-MM" y "YYYY-MM-DD")
+    let fecha = entrada.fecha || '';
+    if (fecha.length === 7) {
+        const [year, month] = fecha.split('-');
+        const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        fecha = `${meses[parseInt(month)-1]} de ${year}`;
+    } else if (fecha.length === 10) {
+        const parts = fecha.split('-');
+        const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        fecha = `${parseInt(parts[2])} de ${meses[parseInt(parts[1])-1]} de ${parts[0]}`;
+    }
+    html += `<p class="meta-fecha">${fecha} · ${escapeHtml(entrada.categoria)}</p>`;
+
+    // Tags
+    if (entrada.tags && entrada.tags.length > 0) {
+        html += `<div class="tags">${entrada.tags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join(' ')}</div>`;
+    }
+
+    // Cuerpo: procesa cada bloque
+    entrada.cuerpo.forEach(bloque => {
+        let texto = bloque.texto || '';
+        // Convierte [[texto|url]] en enlaces seguros
+        let contenidoProcesado = procesarWikilinks(texto);
+
+        if (bloque.tipo === 'parrafo') {
+            html += `<p>${contenidoProcesado}</p>`;
+        } else if (bloque.tipo === 'subtitulo') {
+            html += `<h3>${contenidoProcesado}</h3>`;
+        } else if (bloque.tipo === 'cita') {
+            html += `<blockquote>${contenidoProcesado}</blockquote>`;
+        } else if (bloque.tipo === 'destacado') {
+            html += `<div class="destacado">${contenidoProcesado}</div>`;
+        }
+    });
+
+    contenedor.innerHTML = html;
 }
 
-/* Bloque destacado (para frases clave con énfasis visual) */
-.destacado {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #1a1a1a;
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 4px solid #0055a4;
-    background-color: #f5f9ff;
-    border-radius: 0 4px 4px 0;
-    font-style: italic;
+function procesarWikilinks(texto) {
+    // Busca patrones [[texto|url]] y los convierte en <a> seguros
+    return texto.replace(/\[\[([^|]+)\|([^\]]+)\]\]/g, (match, label, url) => {
+        const safeLabel = escapeHtml(label);
+        const safeUrl = escapeHtml(url);
+        return `<a class="wikilink" href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeLabel}</a>`;
+    });
 }
 
-/* Citas (por si quieres darles un estilo distinto) */
-blockquote {
-    font-size: 1.1rem;
-    color: #333;
-    border-left: 4px solid #888;
-    padding-left: 1.5rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-}
-
-/* Opcional: fecha y tags (para mantener consistencia) */
-.meta-fecha {
-    color: #555;
-    font-size: 0.9rem;
-    margin-top: -0.5rem;
-}
-.tags .tag {
-    display: inline-block;
-    background: #eee;
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    color: #333;
-    margin-right: 0.3rem;
+function escapeHtml(text) {
+    if (!text) return '';
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return String(text).replace(/[&<>"']/g, function(m) { return map[m]; });
 }
