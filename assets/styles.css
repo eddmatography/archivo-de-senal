@@ -381,4 +381,42 @@ button:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
+   /* ============================================================
+   NUEVO: enlaces tipo Wikipedia (sin subrayado, solo hover)
+   ============================================================ */
+.wikilink {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.wikilink:hover {
+  border-bottom-color: var(--teal);
+  color: var(--teal);
+  text-decoration: none; /* asegura que no aparezca subrayado doble */
+}
+
+/* ============================================================
+   NUEVO: bloque destacado (para frases clave)
+   ============================================================ */
+.destacado {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 1.25rem 1.8rem;
+  margin: 2rem 0;
+  border-left: 4px solid var(--teal);
+  background: rgba(14, 165, 164, 0.06);
+  border-radius: 0 4px 4px 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* (Opcional) refinar la cita para que use tus tokens */
+.reader-body blockquote {
+  border-left-color: var(--teal);
+  color: var(--text-dim);
+  font-family: var(--serif);
+}
 }
