@@ -1,10 +1,6 @@
 // ============================================================
-// ARCHIVO DE SEÑAL — render del índice
+// ARCHIVO DE SEÑAL --- render del índice
 // Lee entradas.json y construye el listado. No requiere backend.
-// ============================================================
-
-// ============================================================
-// ARCHIVO DE SEÑAL — render del índice (FIX TOTAL)
 // ============================================================
 
 async function cargarDatos() {
@@ -33,7 +29,7 @@ function crearFilaEntrada(entrada) {
 
   const tagsHtml = (entrada.tags || [])
     .slice(0, 4)
-    .map(t => `<span class="tag">${escapeHtml(t)}</span>`)
+    .map(t => `<span class="tag">#${escapeHtml(t)}</span>`)
     .join("");
 
   a.innerHTML = `
@@ -49,25 +45,21 @@ function crearFilaEntrada(entrada) {
       <span class="cat">${escapeHtml(entrada.categoria || "")}</span>
     </div>
   `;
+
   return a;
 }
 
 async function init() {
   const archive = document.getElementById("archive-list");
-
   try {
     const data = await cargarDatos();
-
-    // 🔥 SOPORTA ambas estructuras
     const lista = data.entradas || data;
 
     if (!Array.isArray(lista)) {
       throw new Error("El JSON no contiene un array válido de entradas");
     }
 
-    const entradas = [...lista].sort((a, b) =>
-      a.fecha < b.fecha ? 1 : -1
-    );
+    const entradas = [...lista].sort((a, b) => a.fecha < b.fecha ? 1 : -1);
 
     if (entradas.length === 0) {
       archive.innerHTML = `<p class="empty-state">Todavía no hay piezas publicadas. Vuelve pronto.</p>`;
@@ -75,23 +67,17 @@ async function init() {
     }
 
     archive.innerHTML = "";
-    entradas.forEach(entrada =>
-      archive.appendChild(crearFilaEntrada(entrada))
-    );
+    entradas.forEach(entrada => archive.appendChild(crearFilaEntrada(entrada)));
 
-    // 🔧 SITIO (opcional)
     document.title = `${data.sitio?.titulo || "Archivo de Señal"} — ${data.sitio?.subtitulo || ""}`;
-
     const h1 = document.getElementById("site-h1");
     if (h1 && data.sitio?.subtitulo) {
       h1.textContent = data.sitio.subtitulo;
     }
-
     const count = document.getElementById("entry-count");
     if (count) {
       count.textContent = String(entradas.length).padStart(2, "0");
     }
-
   } catch (err) {
     console.error("ERROR REAL:", err);
     archive.innerHTML = `<p class="empty-state">Error cargando archivo</p>`;
