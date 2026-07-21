@@ -391,70 +391,7 @@
           "tipo": "parrafo",
           "texto": "14. Jarre, J.-M. (2023). [[Jean-Michel Jarre|https://jeanmicheljarre.com/]] [Músico y compositor]."
         },
-        { "cuerpo": [
-      "texto": "[3] Derrida, J. (1995). Mal de archivo: una impresión freudiana. Trotta."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[4] Rhizome. (s.f.). Digital Art Preservation. rhizome.org"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[5] Adobe. Anuncio del fin de soporte de Flash Player (2017). adobe.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[6] Digital Trends. \"Flash dice adiós y con ello despedimos una era de Internet\". digitaltrends.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[7] Hyperallergic. \"RIP Adobe Flash: Five Takeaways About the Plug-in's Legacy in Net Art\". hyperallergic.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[8] El Español. \"Justo a tiempo, miles de animaciones y juegos en Flash han sido salvados antes de su muerte\". elespanol.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[9] Internet Archive. Flash collection. archive.org"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[10] Mediateca CENART. mediateca.cenart.gob.mx"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[11] UNTREF. Archivo de arte electrónico. untref.edu.ar"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[12] Laboratorio de Arte Alameda. laboratorioalameda.inba.gob.mx"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[13] MUTEK. Archivo de programación. mutek.org"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[14] Candiani, T. taniacandiani.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[15] Rocha Iturbide, M. rochaiturbide.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[16] Benítez, F. franciscabenitez.com"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[17] Mayer-Schönberger, V. (2009). Delete: The Virtue of Forgetting in the Digital Age. Princeton University Press."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[18] Ernst, W. (2013). Digital Memory and the Archive. University of Minnesota Press."
-    }
-  ]
+        {
           "tipo": "parrafo",
           "texto": "15. Schaeffer, P. (s.f.). [[Pierre Schaeffer|https://www.britannica.com/biography/Pierre-Schaeffer]] — Britannica."
         },
@@ -528,7 +465,6 @@
         }
       ]
     },
-
     {
       "id": "memoria-rota",
       "pieza": "39913EM-DOC-002",
@@ -538,76 +474,75 @@
       "categoria": "Ensayo",
       "extracto": "En 2019, MySpace perdió doce años de música...",
       "tags": ["archivo", "memoria digital"],
-      
-  "cuerpo": [
-    {
-      "tipo": "parrafo",
-      "texto": "La pérdida de archivos digitales rara vez responde a un accidente puntual, sino que suele estar enredada dentro de una lógica mucho más amplia, relacionada con la forma en que las plataformas y las empresas terminan decidiendo, casi siempre sin decirlo abiertamente, qué es lo que consideran digno de conservarse y qué no."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "En 2019 [[MySpace|https://myspace.com]] perdió doce años de música, cerca de cincuenta millones de canciones que los propios usuarios habían subido a la plataforma entre 2003 y 2015. La empresa migró de servidores, cambió de proveedores, y en ese traslado los archivos se fueron corrompiendo poco a poco, de tal manera que nadie llegó a notar la magnitud real de lo que se estaba perdiendo sino hasta que ya era demasiado tarde para intentar recuperar algo[1]."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[[El Mató a un Policía Motorizado|https://es.wikipedia.org/wiki/El_Mató_a_un_Policía_Motorizado]] compartió ahí sus primeras canciones. Ellos mismos lo han contado después: cuando empezaban, [[MySpace|https://myspace.com]] y [[Fotolog|https://es.wikipedia.org/wiki/Fotolog]] eran las plataformas donde se movía todo antes de que existieran las redes sociales como las conocemos hoy[2]. Esas primeras canciones y adelantos quedaron atrapados dentro de un servidor que un día simplemente dejó de funcionar como se esperaba."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "MySpace, en ningún momento, tomó la decisión consciente de borrar este material; sin embargo, su negligencia técnica terminó generando exactamente el mismo resultado que hubiera producido una censura deliberada. [[Jacques Derrida|https://es.wikipedia.org/wiki/Jacques_Derrida]] ya había señalado algo parecido en [[Mal de archivo: una impresión freudiana|https://es.wikipedia.org/wiki/Mal_de_archivo]], donde plantea que el archivo no funciona como una simple caja de recuerdos, sino como una máquina de selección."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "Esa misma lógica puede observarse también en [[Spotify|https://www.spotify.com]]. Su algoritmo de recomendación prioriza aquello que ya ha demostrado funcionar, dejando fuera lo que no encaja."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "Antes de que existiera MySpace, ya en los años noventa, se había ensayado un problema parecido con las prácticas del net.art. Obras como [[Jodi.org|https://jodi.org]], o [[Shredder|https://napier.brunner.at/shredder/]] de [[Mark Napier|https://napier.brunner.at]], no existían como objetos físicos, sino como experiencias digitales dependientes de condiciones técnicas específicas."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[[Rhizome|https://rhizome.org]] ha trabajado en la emulación de estos entornos, aunque conviene aclarar que emular no equivale a preservar."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "Dentro del mundo digital, la noción de \"original\" se vuelve inestable. ¿Es el código? ¿La experiencia? ¿La documentación?"
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[[Adobe Flash|https://www.adobe.com/products/flashplayer.html]] fue el soporte de toda una generación. En 2017, [[Adobe|https://www.adobe.com]] anunció el fin de su soporte, efectivo en 2020."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "Plataformas como [[Internet Archive|https://archive.org]] y [[Rhizome|https://rhizome.org]] lograron rescatar parte del contenido, pero gran parte se perdió."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "El soporte material es político. Depender de tecnología privada implica depender de decisiones empresariales."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "En América Latina, archivos como la [[Mediateca CENART|https://mediateca.cenart.gob.mx]], [[UNTREF|https://www.untref.edu.ar]] o el [[Laboratorio de Arte Alameda|https://laboratorioalameda.inba.gob.mx]] existen de forma fragmentada. [[MUTEK|https://mutek.org]] ha documentado su programación, pero documentar no es preservar."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "Artistas como [[Tania Candiani|https://taniacandiani.com]], [[Manuel Rocha Iturbide|https://rochaiturbide.com]] o [[Francisca Benítez|https://franciscabenitez.com]] trabajan con archivo y sonido."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[[Viktor Mayer-Schönberger|https://en.wikipedia.org/wiki/Viktor_Mayer-Sch%C3%B6nberger]], en [[Delete: The Virtue of Forgetting in the Digital Age|https://press.princeton.edu/books/hardcover/9780691138619/delete]], plantea que la memoria infinita puede ser una condena."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "[[Wolfgang Ernst|https://en.wikipedia.org/wiki/Wolfgang_Ernst_(media_theorist)]], en [[Digital Memory and the Archive|https://www.upress.umn.edu/book-division/books/digital-memory-and-the-archive]], entiende el archivo como un sistema activo de selección."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "El arte sonoro presenta una dificultad adicional: no es objeto, sino experiencia."
-    },
-    {
-      "tipo": "parrafo",
-      "texto": "Archivar no es técnico: es político. Cada archivo conservado es una decisión sobre lo que merece permanecer."
-      }
+      "cuerpo": [
+        {
+          "tipo": "parrafo",
+          "texto": "La pérdida de archivos digitales rara vez responde a un accidente puntual, sino que suele estar enredada dentro de una lógica mucho más amplia, relacionada con la forma en que las plataformas y las empresas terminan decidiendo, casi siempre sin decirlo abiertamente, qué es lo que consideran digno de conservarse y qué no."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "En 2019 [[MySpace|https://myspace.com]] perdió doce años de música, cerca de cincuenta millones de canciones que los propios usuarios habían subido a la plataforma entre 2003 y 2015. La empresa migró de servidores, cambió de proveedores, y en ese traslado los archivos se fueron corrompiendo poco a poco, de tal manera que nadie llegó a notar la magnitud real de lo que se estaba perdiendo sino hasta que ya era demasiado tarde para intentar recuperar algo[1]."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "[[El Mató a un Policía Motorizado|https://es.wikipedia.org/wiki/El_Mató_a_un_Policía_Motorizado]] compartió ahí sus primeras canciones. Ellos mismos lo han contado después: cuando empezaban, [[MySpace|https://myspace.com]] y [[Fotolog|https://es.wikipedia.org/wiki/Fotolog]] eran las plataformas donde se movía todo antes de que existieran las redes sociales como las conocemos hoy[2]. Esas primeras canciones y adelantos quedaron atrapados dentro de un servidor que un día simplemente dejó de funcionar como se esperaba."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "MySpace, en ningún momento, tomó la decisión consciente de borrar este material; sin embargo, su negligencia técnica terminó generando exactamente el mismo resultado que hubiera producido una censura deliberada. [[Jacques Derrida|https://es.wikipedia.org/wiki/Jacques_Derrida]] ya había señalado algo parecido en [[Mal de archivo: una impresión freudiana|https://es.wikipedia.org/wiki/Mal_de_archivo]], donde plantea que el archivo no funciona como una simple caja de recuerdos, sino como una máquina de selección."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "Esa misma lógica puede observarse también en [[Spotify|https://www.spotify.com]]. Su algoritmo de recomendación prioriza aquello que ya ha demostrado funcionar, dejando fuera lo que no encaja."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "Antes de que existiera MySpace, ya en los años noventa, se había ensayado un problema parecido con las prácticas del net.art. Obras como [[Jodi.org|https://jodi.org]], o [[Shredder|https://napier.brunner.at/shredder/]] de [[Mark Napier|https://napier.brunner.at]], no existían como objetos físicos, sino como experiencias digitales dependientes de condiciones técnicas específicas."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "[[Rhizome|https://rhizome.org]] ha trabajado en la emulación de estos entornos, aunque conviene aclarar que emular no equivale a preservar."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "Dentro del mundo digital, la noción de \"original\" se vuelve inestable. ¿Es el código? ¿La experiencia? ¿La documentación?"
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "[[Adobe Flash|https://www.adobe.com/products/flashplayer.html]] fue el soporte de toda una generación. En 2017, [[Adobe|https://www.adobe.com]] anunció el fin de su soporte, efectivo en 2020."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "Plataformas como [[Internet Archive|https://archive.org]] y [[Rhizome|https://rhizome.org]] lograron rescatar parte del contenido, pero gran parte se perdió."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "El soporte material es político. Depender de tecnología privada implica depender de decisiones empresariales."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "En América Latina, archivos como la [[Mediateca CENART|https://mediateca.cenart.gob.mx]], [[UNTREF|https://www.untref.edu.ar]] o el [[Laboratorio de Arte Alameda|https://laboratorioalameda.inba.gob.mx]] existen de forma fragmentada. [[MUTEK|https://mutek.org]] ha documentado su programación, pero documentar no es preservar."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "Artistas como [[Tania Candiani|https://taniacandiani.com]], [[Manuel Rocha Iturbide|https://rochaiturbide.com]] o [[Francisca Benítez|https://franciscabenitez.com]] trabajan con archivo y sonido."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "[[Viktor Mayer-Schönberger|https://en.wikipedia.org/wiki/Viktor_Mayer-Sch%C3%B6nberger]], en [[Delete: The Virtue of Forgetting in the Digital Age|https://press.princeton.edu/books/hardcover/9780691138619/delete]], plantea que la memoria infinita puede ser una condena."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "[[Wolfgang Ernst|https://en.wikipedia.org/wiki/Wolfgang_Ernst_(media_theorist)]], en [[Digital Memory and the Archive|https://www.upress.umn.edu/book-division/books/digital-memory-and-the-archive]], entiende el archivo como un sistema activo de selección."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "El arte sonoro presenta una dificultad adicional: no es objeto, sino experiencia."
+        },
+        {
+          "tipo": "parrafo",
+          "texto": "Archivar no es técnico: es político. Cada archivo conservado es una decisión sobre lo que merece permanecer."
+        }
       ]
     }
   ]
