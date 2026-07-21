@@ -1,39 +1,26 @@
-// lectura.js
-document.addEventListener('DOMContentLoaded', function() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
-
-  if (!id) {
-    document.getElementById('contenido').innerHTML = '<p>No se especificó ID.</p>';
-    return;
-  }
-
-  // PRIMERO: cargar el índice para obtener el nombre del archivo
-  fetch('entradas.json')
-    .then(res => res.json())
-    .then(data => {
-      const entradaMeta = data.entradas.find(e => e.id === id);
-      if (!entradaMeta) {
-        document.getElementById('contenido').innerHTML = '<p>Entrada no encontrada.</p>';
-        return;
-      }
-      // SEGUNDO: cargar el archivo individual de la entrada
-      return fetch(`contenido/${entradaMeta.archivo}`)
-        .then(res => {
-          if (!res.ok) throw new Error('No se pudo cargar el contenido');
-          return res.json();
-        })
-        .then(entradaCompleta => {
-          // Combinar metadatos del índice con el cuerpo de la entrada
-          const entrada = { ...entradaMeta, ...entradaCompleta };
-          renderEntrada(entrada);
-        });
-    })
-    .catch(err => {
-      document.getElementById('contenido').innerHTML = '<p>Error cargando el archivo.</p>';
-      console.error(err);
-    });
-});
-
-// El resto de las funciones (renderEntrada, procesarWikilinks, escapeHtml) 
-// se mantienen IGUALES que antes
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando... — Archivo de Señal</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"></div>
+<header class="site-header">
+<div class="brand">
+<span class="brand-mark">[ señal ]</span>
+<a href="index.html" class="brand-name" style="text-decoration:none;">Archivo de Señal</a>
+</div>
+</header>
+<main id="contenido">
+<!-- El script llenará esto -->
+</main>
+<footer class="site-footer">
+<p>39913EM</p>
+<p>Sitio estático · Autónomo · de consulta abierta</p>
+</footer>
+<script src="assets/lectura.js"></script>
+</body>
+</html>
