@@ -1,19 +1,4 @@
 {
-  "sitio": {
-    "titulo": "Archivo de Señal",
-    "subtitulo": "Cultura, arte digital y electrónico — crítica y difusión",
-    "autor": "Eduardo Manuel Gutiérrez Orduña"
-  },
-  "entradas": [
-    {
-      "id": "arquitectura-sonora-entornos-virtuales",
-      "pieza": "39913EM-DOC-001",
-      "titulo": "Arquitectura sonora en entornos virtuales",
-      "subtitulo": "La transformación del espacio a través de la tecnología",
-      "fecha": "2026-06",
-      "categoria": "Ensayo",
-      "extracto": "Los espacios virtuales han transformado la creación contemporánea al ofrecer nuevas formas de explorar la relación entre el sonido, el entorno y la experiencia estética. Estas plataformas permiten diseñar entornos inmersivos que expanden los límites sensoriales mediante tecnologías como el audio tridimensional y la espacialización sonora, reconfigurando profundamente la percepción del espacio arquitectónico virtual. Sin embargo, esta transformación no es neutral: plantea tensiones técnicas, conceptuales y culturales —sobre la autenticidad de la experiencia, la distribución desigual de los recursos tecnológicos y la posible reducción del sonido a mero decorado auditivo— que este texto examina de manera crítica. El arte sonoro digital se consolida así como un campo en constante evolución que no solo amplía los horizontes estéticos, sino que también los interroga.",
-      "tags": ["arte sonoro", "espacios virtuales", "arquitectura sonora"],
       "cuerpo": [
         {
           "tipo": "parrafo",
