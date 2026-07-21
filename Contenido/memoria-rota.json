@@ -1,12 +1,4 @@
  {
-      "id": "memoria-rota",
-      "pieza": "39913EM-DOC-002",
-      "titulo": "Memoria rota",
-      "subtitulo": "Persistencia, pérdida y archivo en sistemas digitales",
-      "fecha": "2026-07",
-      "categoria": "Ensayo",
-      "extracto": "La pérdida de archivos digitales rara vez responde a un accidente puntual, sino que suele estar enredada dentro de una lógica mucho más amplia, relacionada con la forma en que las plataformas y las empresas terminan decidiendo, casi siempre sin decirlo abiertamente, qué es lo que consideran digno de conservarse y qué no. En 2019, MySpace perdió doce años de música, cerca de cincuenta millones de canciones. La empresa migró de servidores, y en ese traslado los archivos se fueron corrompiendo hasta perderse para siempre.",
-      "tags": ["archivo", "memoria digital", "preservación", "MySpace", "Flash"],
       "cuerpo": [
         {
           "tipo": "parrafo",
